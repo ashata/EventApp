@@ -1,0 +1,15 @@
+Wedding App
+
+Home page
+
+Photo banner --> 4 photos
+
+4 cards  ---> Date, Location and address of wedding
+			  Gift registry
+			  RSVP
+			  About us
+			  Driving directions and hotels where to stay and eat and things to do
+			  Wedding program
+			  wedding resource
+			  FAQ
+			  Comments

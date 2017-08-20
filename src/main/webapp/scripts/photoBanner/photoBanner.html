@@ -1,0 +1,13 @@
+<div ng-init="getImages()">
+  <ul rn-carousel rn-carousel-auto-slide="" rn-carousel-pause-on-hover="" rn-carousel-buffered=""
+      class="carousel2 ng-scope" style="height:500px">
+      <li ng-repeat="slide in slides">
+	    <div class="banner-photo">
+		  <img ng-src="{{slide.image}}" style="height:100%"></img>
+		</div>
+        <!-- <video ng-if="slide.typeu == 'video'" width="400" class='videoPlayer' preload='metadata'> -->
+          <!-- <source ng-src="videos/engage1.mp4" type="video/mp4"> -->
+       <!-- </video> -->
+      </li>
+  </ul>
+</div>

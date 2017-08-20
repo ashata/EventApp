@@ -1,0 +1,11 @@
+<div class="infoCard">
+	  <!--used to track which template is displayed-->
+	  <div class="templateName" hidden ng-bind="templateName"></div>
+	  <!--used to compare cache/network data times and display most recent data-->
+      <div class="card-last-updated" hidden ng-bind="dataLastUpdated"></div>
+	  <div class="iconCode {{iconClass}}"></div>
+      
+	  <div class="description" ng-bind="description"></div>
+      <div class="info" ng-bind="info"></div>
+      <a class="cardButton" ng-href="{{buttonLink}}" ng-bind="buttonText" title="{{buttonHoverText}}"></a>
+</div>

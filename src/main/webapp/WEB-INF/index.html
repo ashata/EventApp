@@ -1,0 +1,97 @@
+<!--
+ Copyright 2016 Google Inc.
+ 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ 
+      http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<!DOCTYPE html>
+<html ng-app="weddingApp">
+<head>
+  <link rel="manifest" href="/weddingApp/manifest.json">
+  <meta name="theme-color" content="#ff6600" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asha &amp; Charlie's Wedding</title>
+  <link rel="stylesheet" type="text/css" href="styles/app.css">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+  <link rel="stylesheet" href="scripts/node_modules/angular-carousel/dist/angular-carousel.min.css"/>
+
+   <!-- TODO change the image and color -->
+  <!-- <meta name="msapplication-TileImage" content="/images/icons/icon.png"> -->
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+<!-- Add to home screen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Asha weds Chaelie">
+    <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+<link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="header__title">Our Wedding</h1>
+	<button id="homeBtn" class="headerButton"></button>
+  </header>
+
+  <main class="main">
+  <!-- <div class="loader"> -->
+    <!-- <svg viewBox="0 0 32 32" width="32" height="32"> -->
+      <!-- <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle> -->
+    <!-- </svg> -->
+  <!-- </div> -->
+    <div ng-view></div>
+  </main>
+
+  <script type="text/javascript" src="scripts/node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="scripts/node_modules/angular/angular.min.js"></script>
+  <script type="text/javascript" src="scripts/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="scripts/node_modules/tv4/tv4.js"></script>
+  <script type="text/javascript" src="scripts/node_modules/objectpath/lib/ObjectPath.js"></script>
+  <script type="text/javascript" src="scripts/node_modules/angular-schema-form/dist/schema-form.min.js"></script>
+  <script type="text/javascript" src="scripts/node_modules/angular-schema-form/dist/bootstrap-decorator.min.js"></script>
+  <script type="text/javascript" src="scripts/node_modules/angular/angular-resource.min.js"/></script>
+  <script type="text/javascript" src="scripts/node_modules/tether/dist/js/tether.min.js"></script>
+  <script type="text/javascript" src="scripts/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="scripts/node_modules/angular-touch/angular-touch.min.js"></script>
+  <script type="text/javascript" src="scripts/node_modules/angular-carousel/dist/angular-carousel.min.js"></script>
+  <script type="text/javascript" src="scripts/node_modules/angular/angular-route.min.js"></script>
+  <script type="text/javascript" src="scripts/node_modules/underscore/underscore-min.js"></script>
+  
+  <script type="text/javascript" src="scripts/app.js"/></script>
+  <script src="scripts/infoCard/infoCard.directive.js"></script>
+  <script src="scripts/rsvp/rsvp.directive.js"></script>
+  <script src="scripts/directions/directions.directive.js"></script>
+  <script src="scripts/giftRegistry/giftRegistry.directive.js"></script>
+  <script src="scripts/photoBanner/photoBanner.directive.js"></script>
+  <script src="scripts/baseCard/baseCard.directive.js"></script>
+
+  <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/weddingApp/sw.js').then(function(registration) {
+              // Registration was successful
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+              // registration failed :(
+              console.log('ServiceWorker registration failed: ', err);
+            });
+          });
+      }
+  </script>
+
+
+</body>
+</html>

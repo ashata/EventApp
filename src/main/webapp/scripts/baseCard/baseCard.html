@@ -1,0 +1,16 @@
+<div class="pageTitle low" ng-bind="title"></div>
+<div class="infoCards">
+	<div ng-init="getPage()">
+		<div class="infoCard" ng-repeat="item in pageItems">
+			  <!--item.d to track which template is displayed-->
+			  <div class="templateName" hidden ng-bind="item.templateName"></div>
+			  <!--item.d to compare cache/network data times and display most recent data-->
+			  <div class="card-last-updated" hidden ng-bind="item.dataLastUpdated"></div>
+			  <div class="iconCode {{item.iconClass}}"></div>
+			  
+			  <div class="description" ng-bind="item.question"></div>
+			  <div class="info" ng-bind="item.answer"></div>
+			  <a ng-if="item.link" class="info" ng-href="{{item.link}}">click here</a>
+		</div>
+	</div>	
+</div>

@@ -1,0 +1,122 @@
+/*
+	 * Fake user data that is presented when the user first uses the app,
+	 * or when the user is prospective client. See startup code for more
+	 * discussion.
+	type: pod, hero, header, footer
+	 */
+	var addressCard = {
+		//metadata
+		type: 'pod',
+		name: 'organizerPod',
+		templateKey: 'ABCD',
+		created: '2016-07-22T01:00:00Z',
+
+		//textual data
+		title: 'TAX ORGANIZER',
+		iconCode: 1,
+		intro: 'Organize my tax life',
+		xplnText: 'Get ready for tax season with your personalized tax organizer.',
+	};
+	
+	var rsvpCard = {
+		//metadata
+		type: 'pod',
+		name: 'estimatorPod',
+		templateKey: 'KLMN',
+		created: '2016-07-22T01:00:00Z',
+
+		//textual data
+		title: 'TAX ESTIMATOR',
+		iconCode: 2,
+		intro: 'See how much you owe',
+		xplnText: 'Estimate your taxes',
+	};
+	
+	var giftRegistryCard = {
+		//metadata
+		type: 'pod',
+		name: 'locatorPod',
+		templateKey: 'OLP',
+		created: '2016-07-22T01:00:00Z',
+
+		//textual data
+		title: '',
+		iconCode: 3,
+		intro: 'FIND AN OFFICE',
+		xplnText: '',
+	};
+
+	var aboutusCard = {
+		//metadata
+		type: 'hero',
+		name: 'heroCard',
+		templateKey: 'DEFF',
+		created: '2016-07-22T01:00:00Z',
+
+		//textual data
+		title: 'GET A HEAD START ON NEXT YEARS TAXES',
+		iconCode: 1,
+		intro: 'Upload your 2017 receipts, donations, and tax docs as they arrive.',
+		xplnText: 'ADD DOCUMENTS',
+		action: 'mytax/getdocuments',
+	};
+
+	var directionsCard = {
+		//metadata
+		type: 'hero',
+		name: 'heroCard',
+		templateKey: 'DEFF',
+		created: '2016-07-22T01:00:00Z',
+
+		//textual data
+		title: 'GET A HEAD START ON NEXT YEARS TAXES',
+		iconCode: 1,
+		intro: 'Upload your 2017 receipts, donations, and tax docs as they arrive.',
+		xplnText: 'ADD DOCUMENTS',
+		action: 'mytax/getdocuments',
+	};
+	
+	var faqCard = {
+		//metadata
+		type: 'hero',
+		name: 'heroCard',
+		templateKey: 'DEFF',
+		created: '2016-07-22T01:00:00Z',
+
+		//textual data
+		title: 'GET A HEAD START ON NEXT YEARS TAXES',
+		iconCode: 1,
+		intro: 'Upload your 2017 receipts, donations, and tax docs as they arrive.',
+		xplnText: 'ADD DOCUMENTS',
+		action: 'mytax/getdocuments',
+	};
+	var commentsCard = {
+		//metadata
+		type: 'hero',
+		name: 'heroCard',
+		templateKey: 'DEFF',
+		created: '2016-07-22T01:00:00Z',
+
+		//textual data
+		title: 'GET A HEAD START ON NEXT YEARS TAXES',
+		iconCode: 1,
+		intro: 'Upload your 2017 receipts, donations, and tax docs as they arrive.',
+		xplnText: 'ADD DOCUMENTS',
+		action: 'mytax/getdocuments',
+	};
+	
+	var resourceCard = {
+		//metadata
+		type: 'hero',
+		name: 'heroCard',
+		templateKey: 'DEFF',
+		created: '2016-07-22T01:00:00Z',
+
+		//textual data
+		title: 'GET A HEAD START ON NEXT YEARS TAXES',
+		iconCode: 1,
+		intro: 'Upload your 2017 receipts, donations, and tax docs as they arrive.',
+		xplnText: 'ADD DOCUMENTS',
+		action: 'mytax/getdocuments',
+	};
+	

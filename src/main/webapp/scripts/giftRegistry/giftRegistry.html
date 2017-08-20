@@ -1,0 +1,16 @@
+<div class="pageTitle low">Gift Registry</div>
+<div class="infoCards">
+	<div ng-init="showRegistry()">
+		<div class="infoCard" ng-repeat="store in registryList">
+		  <!--used to track which template is displayed-->
+		  <div class="templateName" hidden ng-bind="store.templateName"></div>
+		  <!--used to compare cache/network data times and display most recent data-->
+		  <div class="card-last-updated" hidden ng-bind="store.dataLastUpdated"></div>
+		  <div class="iconCode {{store.iconClass}}"></div>
+
+		  <a target="_blank" ng-if="!!store.url && store.url.toLowerCase().indexOf('http') >= 0" ng-href="{{store.url}}" ng-bind="store.storeName"></a>
+		  <span ng-if="store.url.toLowerCase().indexOf('http') < 0">{{store.storeName}}<br>{{store.url}}</span>
+		  <div class="cardButton" ng-click="openLink()" ng-html="store.buttonText" title="{{store.buttonHoverText}}"></div>
+		</div>
+	</div>	
+</div>
