@@ -8,9 +8,10 @@
 			  <div class="card-last-updated" hidden ng-bind="item.dataLastUpdated"></div>
 			  <div class="iconCode {{item.iconClass}}"></div>
 			  
-			  <div class="description" ng-bind="item.question"></div>
-			  <div class="info" ng-bind="item.answer"></div>
+			  <div href="" class="description" ng-bind="item.question" ng-click="collapse = !collapse"></div>
+			  <div id="demo" class="info" ng-bind="item.answer" ng-if="collapse"></div>
+
 			  <a ng-if="item.link" class="info" ng-href="{{item.link}}">click here</a>
 		</div>
-	</div>	
+	</div>
 </div>
