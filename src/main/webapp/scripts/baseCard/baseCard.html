@@ -1,7 +1,7 @@
 <div class="pageTitle low" ng-bind="title"></div>
 <div class="infoCards">
 	<div ng-init="getPage()">
-		<div class="infoCard" ng-repeat="item in pageItems">
+		<div ng-if="!showCard" class="infoCard" ng-repeat="item in pageItems" ng-swipe-right="showCard= !showCard">
 			  <!--item.d to track which template is displayed-->
 			  <div class="templateName" hidden ng-bind="item.templateName"></div>
 			  <!--item.d to compare cache/network data times and display most recent data-->

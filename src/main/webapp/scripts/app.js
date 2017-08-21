@@ -32,7 +32,7 @@
 	 * Methods for dealing with the model
 	 *
 	 ****************************************************************************/
-	var appModule = angular.module('weddingApp', ['ngRoute', 'schemaForm', 'angular-carousel']);
+	var appModule = angular.module('weddingApp', ['ngRoute', 'schemaForm', 'angular-carousel', 'ngTouch']);
 
 	appModule.config(['$locationProvider', function ($locationProvider) {
 				$locationProvider.hashPrefix('');
