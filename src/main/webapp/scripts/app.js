@@ -92,7 +92,7 @@
 		// Fetch the latest data.
 		$http({
 			method: 'GET',
-			url: '/weddingApp/home'
+			url: '/home'
 		}).then(function (success) {
 			$scope.cards = success.data.cardList;
 			app.hideLoading();
