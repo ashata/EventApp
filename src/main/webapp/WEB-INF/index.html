@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html ng-app="weddingApp">
 <head>
-  <link rel="manifest" href="/weddingApp/manifest.json">
+  <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#ff6600" />
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,7 +81,7 @@
   <script>
       if ('serviceWorker' in navigator) {
           window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/weddingApp/sw.js').then(function(registration) {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
               // Registration was successful
               console.log('ServiceWorker registration successful with scope: ', registration.scope);
             }, function(err) {
