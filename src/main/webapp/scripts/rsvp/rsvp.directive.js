@@ -38,8 +38,8 @@ function RSVPController($scope, $http) {
 					enum: [0, 1, 2, 3, 4, 5],
 				    default: 0,
 				    validationMessage: {
-				        302: "We love you but that's a bit much, eh?"
-				    }
+				        1: "We love you but that's a bit much, eh?"
+				    },
 					"title": "Bringing guests"
 				},
 				"activCodeMap": {

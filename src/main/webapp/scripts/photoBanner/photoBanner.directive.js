@@ -23,7 +23,7 @@ function PhotoBannerController($scope, $sce, $http) {
         console.log("entered");
         $http({
             method: 'GET',
-            url: '/weddingApp/slideshow',
+            url: '/slideshow',
         }).then(function (success) {
             //fetch from server and display results
             _.each(success.data, function(imageObj) {

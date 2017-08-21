@@ -20,8 +20,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @SpringBootApplication
 @EnableAutoConfiguration
-@PropertySource("classpath:weddingApp.properties")
-//@PropertySource("classpath:weddingApp-local.properties")
+//@PropertySource("classpath:weddingApp.properties")
+@PropertySource("classpath:weddingApp-local.properties")
 @EnableTransactionManagement
 @EnableMongoRepositories("org.hoboventures.wedding.dao")
 @ComponentScan({"org.hoboventures.wedding", "org.hoboventures.wedding.config",
