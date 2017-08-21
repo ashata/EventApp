@@ -16,7 +16,7 @@ function BaseController($scope, $http) {
 	$scope.getPage = function () {
 		$http({
 			method: 'GET',
-			url: '/weddingApp/getPage/',
+			url: '/getPage/',
 			params: {
 				path: window.location.hash.substring(2)
 			}
