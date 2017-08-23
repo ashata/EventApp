@@ -249,9 +249,19 @@ img{
   width:100%;
 }
 
-@media (min-width: 401px) {
+.carousel2 {
+  margin-top:16px;
+}
+
+@media (min-width: 501px) {
   .carousel2 {
     height: 500px;
+  }
+}
+
+@media(max-width: 500px) {
+  .carousel2 {
+    height: 300px;
   }
 }
 
