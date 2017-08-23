@@ -238,6 +238,7 @@ img{
   box-sizing: border-box;
   border-radius: 2px;
   margin: 10px 0;
+  height: 400px;
 }
 
 .banner-photo {
