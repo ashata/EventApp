@@ -103,7 +103,7 @@ body {
 
  #homeBtn {
 	filter: invert();
-    background: url(../images/home.svg) center no-repeat;
+    background: url(../images/icons/home.svg) center no-repeat;
     position: relative;
     top: -5px;
     width: 40px;

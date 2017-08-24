@@ -94,10 +94,11 @@
 			method: 'GET',
 			url: '/home'
 		}).then(function (success) {
+	        $scope.error = false;
 			$scope.cards = success.data.cardList;
 			app.hideLoading();
 		}, function (error) {
-			alert("Server is down or facing an issue, please try again later");
+			$scope.error = true;
 			app.hideLoading();
 		});
 	};

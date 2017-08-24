@@ -20,7 +20,6 @@ function PhotoBannerController($scope, $sce, $http) {
     }
 
     $scope.getImages = function () {
-        console.log("entered");
         $http({
             method: 'GET',
             url: '/slideshow',

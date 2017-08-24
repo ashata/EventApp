@@ -1,7 +1,13 @@
  <div ng-controller="mainCtrl"> 
 	<photo-banner item="photo"></photo-banner>
     <div>
-		<div class="pageTitle">Home</div>
+		<div ng-if="!error" class="pageTitle">Home</div>
+		<div ng-if="error" class="pageTitle">
+			Asha weds Charlie
+			<div>October 14, 2017</div>
+			<a href="https://thekellygallery.com/">Kelly Gallery Gardens, Overland Park, KS</a>
+			<span>App is currently down, please check back in a few hours for more content</span>
+		</div>
 		<div ng-repeat="card in cards">
 			<info-card item="card"></info-card>
 		</div>
