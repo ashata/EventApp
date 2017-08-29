@@ -83,7 +83,7 @@
 		});
 		
 		document.getElementById('homeBtn').addEventListener('click', function () {
-			app.home($scope);
+			app.home();
 		});
 	});
 

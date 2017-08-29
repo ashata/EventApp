@@ -79,7 +79,7 @@
 		app.getCardData($scope, $http);
 
 		document.getElementById('homeBtn').addEventListener('click', function () {
-			app.home($scope);
+			app.home();
 		});
 	});
 
@@ -104,7 +104,7 @@
 	};
 
 	//back to main page
-	app.home = function ($scope) {
-		window.location = '/';
+	app.home = function () {
+		window.location.assign("https://www.ashacharlie.com")
 	};
 })();
