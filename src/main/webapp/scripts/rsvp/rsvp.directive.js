@@ -16,7 +16,8 @@ function RSVPController($scope, $http) {
 	this.$onInit = function () {
 		console.log($scope);
 		var data = $scope.item;
-
+        $scope.rsvpDTO = {};
+        $scope.emailReqd = false;
 		$scope.schema = {
 			"type": "object",
 			"properties": {
@@ -53,9 +54,9 @@ function RSVPController($scope, $http) {
 						"Henna Tattoo 2 days before the wedding": {
 							"type": "boolean"
 						},
-						"I'd love to be a part of wedding dance party": {
+						/*"I'd love to be a part of wedding dance party": {
 							"type": "boolean" 
-						},
+						},*/
 						"I(We) will need hotel block reservation": {
 							"type": "boolean",
 						}
@@ -65,69 +66,44 @@ function RSVPController($scope, $http) {
 					"title": "email",
 					"type": "string",
 					"format": "email"
-				}
+				},
+				 "required": ["firstName, lastName", "rsvpText", "email"]
 			}
 		};
 
 		$scope.form = [{
 				"key": "firstName",
-				"notitle": false,
-				"showAdvanced": false,
-				"disableSuccessState": false,
-				"disableErrorState": false,
-				"readonly": false
+				"required": true
 			}, {
 				"key": "lastName",
-				"notitle": false,
-				"showAdvanced": false,
-				"disableSuccessState": false,
-				"disableErrorState": false,
-				"readonly": false
+				"required": true
 			}, {
 				"key": "rsvpText",
-				"notitle": false,
-				"showAdvanced": true,
-				"disableSuccessState": false,
-				"disableErrorState": false,
-				"readonly": false
+				"required": true
 			}, {
 				"key": "guests",
-				"notitle": false,
-				"showAdvanced": false,
-				"disableSuccessState": false,
-				"disableErrorState": false,
-				"readonly": false
 			}, {
 				"key": "activCodeMap",
-				"notitle": false,
-				"showAdvanced": false,
-				"disableSuccessState": false,
-				"disableErrorState": false,
-				"readonly": false
 			}, {
 				"key": "email",
-				"notitle": false,
-				"showAdvanced": false,
-				"disableSuccessState": false,
-				"disableErrorState": false,
-				"readonly": false
 			}
 		];
-
-		$scope.rsvpDTO = {};
 	}
 
-	$scope.rsvp = function () {
+	$scope.rsvp = function (form) {
+	        $scope.$broadcast('schemaFormValidate');
 			//rsvp save/update.
-			$http({
-				method: 'POST',
-				url: '/weddingApp/rsvp',
-				data: $scope.rsvpDTO
-			}).then(function (success) {
-				//TODO: update this to fetch from server and display results
-				alert("Thanks for your RSVP.")
-			}, function (error) {
-				alert("Error saving, please try again later or contact us at email");
-			});
+			if (form.$valid) {
+                $http({
+                    method: 'POST',
+                    url: '/rsvp',
+                    data: $scope.rsvpDTO
+                }).then(function (success) {
+                    //TODO: update this to fetch from server and display results
+                    alert("Thanks for your RSVP.")
+                }, function (error) {
+                    alert("Error saving, please try again later or contact us at email");
+                });
+			}
 	}
 }

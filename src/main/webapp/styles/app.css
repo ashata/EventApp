@@ -204,12 +204,18 @@ body {
 
 .infoCard .description {
   font-weight: bold;
+  white-space: pre-line;
+}
+
+.infoCard .info {
+  white-space: pre-line;
 }
 
 .pageTitle {
   font-size: 1.3em;
   font-weight: bold;
   text-align: center;
+  white-space: pre-line;
 }
 
 .pageTitle.low {

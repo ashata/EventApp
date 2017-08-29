@@ -21,7 +21,7 @@ function GiftRegistryController($scope, $http) {
 	$scope.showRegistry = function () {
 		$http({
 			method: 'GET',
-			url: '/weddingApp/fetchRegistry',
+			url: '/fetchRegistry',
 		}).then(function (success) {
 			//fetch from server and display results
 			$scope.registryList = success.data;
