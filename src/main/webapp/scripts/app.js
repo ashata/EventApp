@@ -65,6 +65,10 @@
 			controller: 'baseController',
 			templateUrl: 'scripts/baseCard/baseCard.html'
 		})
+		.when('/program', {
+            controller: 'baseController',
+            templateUrl: 'scripts/baseCard/baseCard.html'
+        })
 		.otherwise({
 			controller: 'mainCtrl',
 			templateUrl: 'scripts/app.html'

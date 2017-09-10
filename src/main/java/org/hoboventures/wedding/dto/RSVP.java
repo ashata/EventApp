@@ -60,14 +60,26 @@ public class RSVP extends BaseDTO {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
         RSVP rsvp = (RSVP) o;
-        return (Objects.equals(firstName, rsvp.firstName) && Objects.equals(lastName, rsvp.lastName)) ||
-                Objects.equals(email, rsvp.email);
+        return (StringUtils.equalsIgnoreCase(getFirstName(), rsvp.getFirstName()) &&
+                    StringUtils.equalsIgnoreCase(getLastName(), rsvp.getLastName())) ||
+                        StringUtils.equalsIgnoreCase(getEmail(), rsvp.getEmail());
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), firstName, lastName, email);
+    }
+
+    public String getFirstName() {
+        return StringUtils.trimToEmpty(firstName);
+    }
+
+    public String getLastName() {
+        return StringUtils.trimToEmpty(lastName);
+    }
+
+    public String getEmail() {
+        return StringUtils.trimToEmpty(email);
     }
 }

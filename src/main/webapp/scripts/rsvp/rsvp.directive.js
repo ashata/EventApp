@@ -41,7 +41,7 @@ function RSVPController($scope, $http) {
 				    validationMessage: {
 				        1: "We love you but that's a bit much, eh?"
 				    },
-					"title": "Bringing guests"
+					"title": "Total no. of guests including you"
 				},
 				"activCodeMap": {
 					"title": "Activities",

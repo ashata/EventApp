@@ -7,6 +7,8 @@ import org.hoboventures.wedding.dto.FAQ;
 import org.hoboventures.wedding.dto.RSVP;
 import org.hoboventures.wedding.service.FAQService;
 import org.hoboventures.wedding.service.RSVPService;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -24,6 +26,7 @@ public class FAQServiceImpl implements FAQService {
 
 
     @Override
+    @Cacheable(value = "faqCache", unless = "#result != null")
     public List<FAQ> findAll() {
         return faqRepository.findAll();
     }
@@ -46,7 +49,7 @@ public class FAQServiceImpl implements FAQService {
         return all;
     }
 
-    @Override
+    /*@Override
     public List<FAQ> save() {
         List<FAQ> faqList = new ArrayList<>();
 
@@ -247,9 +250,22 @@ public class FAQServiceImpl implements FAQService {
 
         return faqRepository.save(faqList);
     }
-
+*/
     @Override
+    @Cacheable(value = "aboutUsCache", unless = "#result != null")
     public List<FAQ> brideAndGroom() {
         return faqRepository.brideAndGroom();
+    }
+
+    @Override
+    @CacheEvict(cacheNames = "aboutUsCache", allEntries = true)
+    public void aboutUsCacheEvict(){
+
+    }
+
+    @Override
+    @CacheEvict(cacheNames = "faqCache", allEntries = true)
+    public void faqCacheEvict(){
+
     }
 }

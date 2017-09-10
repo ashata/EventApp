@@ -6,8 +6,10 @@ import lombok.ToString;
 import org.apache.commons.lang3.StringUtils;
 import org.hoboventures.wedding.dto.FAQ;
 import org.hoboventures.wedding.dto.Image;
+import org.hoboventures.wedding.dto.Program;
 import org.hoboventures.wedding.dto.WeddingHome;
 import org.hoboventures.wedding.service.FAQService;
+import org.hoboventures.wedding.service.GiftRegistryService;
 import org.hoboventures.wedding.service.ImageService;
 import org.hoboventures.wedding.service.WeddingHomeService;
 import org.slf4j.Logger;
@@ -30,6 +32,7 @@ public class WeddingHomeController {
     @Autowired private WeddingHomeService weddingHomeService;
     @Autowired private FAQService faqService;
     @Autowired private ImageService imageService;
+    @Autowired private GiftRegistryService giftRegistryService;
 
     @GetMapping(value = "home")
     public WeddingResponse home(){
@@ -47,11 +50,11 @@ public class WeddingHomeController {
         return mav;
     }
 
-    @GetMapping(value = "saveFAQ")
-    public List<FAQ> faqSave(){
-        return faqService.save();
-    }
-
+    /* @GetMapping(value = "saveFAQ")
+     public List<FAQ> faqSave(){
+         return faqService.save();
+     }
+ */
     @GetMapping(value = "getPage")
     public List<FAQ> getPage(@RequestParam("path") String path){
         logger.info("path: " + path);
@@ -64,10 +67,24 @@ public class WeddingHomeController {
         return null;
     }
 
+    @GetMapping(value = "weddingProgram")
+    public List<Program> program(){
+        return weddingHomeService.getProgram();
+    }
+
     @GetMapping(value = "slideshow")
     public List<Image> getImages(){
         return imageService.images();
     }
+
+    @GetMapping(value = "cacheRefresh")
+    public boolean cacheRefresh(){
+        weddingHomeService.programCacheEvict();
+        faqService.aboutUsCacheEvict();
+        faqService.faqCacheEvict();
+        return true;
+    }
+
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
@@ -78,8 +95,6 @@ public class WeddingHomeController {
         mav.setViewName("error");
         return mav;
     }
-
-
 
     @Getter @Setter @ToString
     private class WeddingResponse{

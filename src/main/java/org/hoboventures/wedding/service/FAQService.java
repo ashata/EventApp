@@ -1,6 +1,7 @@
 package org.hoboventures.wedding.service;
 
 import org.hoboventures.wedding.dto.FAQ;
+import org.springframework.cache.annotation.CacheEvict;
 
 import java.util.List;
 
@@ -11,7 +12,13 @@ public interface FAQService {
 
     List<FAQ> findAll();
 
-    List<FAQ> save();
+    //List<FAQ> save();
 
     List<FAQ> brideAndGroom();
+
+    @CacheEvict(cacheNames = "aboutUsCache", allEntries = true)
+    void aboutUsCacheEvict();
+
+    @CacheEvict(cacheNames = "faqCache", allEntries = true)
+    void faqCacheEvict();
 }
