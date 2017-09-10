@@ -1,6 +1,16 @@
 <div class="pageTitle low" ng-bind="title"></div>
 <div class="infoCards">
 	<div ng-init="getPage()">
+		<div class="infoCard" ng-if="weather">
+			<a href="https://www.accuweather.com/en/us/overland-park-ks/66204/weather-forecast/338317"
+			   class="aw-widget-legal"/>
+			<div id="awcc1505034637925" class="aw-widget-current"  data-locationkey="338317" data-unit="f"
+				 data-language="en-us" data-useip="false" data-uid="awcc1505034637925">
+			</div>
+			<!--TODO: Fix below accuweather script, download related css files from domain: https://oap.accuweather.com
+				look for line 40-70 in accuweather.js-->
+			<script  ng-if="weather" type="text/javascript" src="/scripts/accuweather.js"></script>
+		</div>
 		<div ng-if="!showCard" class="infoCard" ng-repeat="item in pageItems" ng-swipe-right="showCard= !showCard">
 			  <!--item.d to track which template is displayed-->
 			  <div class="templateName" hidden ng-bind="item.templateName"></div>

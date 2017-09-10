@@ -16,9 +16,7 @@ public interface FAQService {
 
     List<FAQ> brideAndGroom();
 
-    @CacheEvict(cacheNames = "aboutUsCache", allEntries = true)
     void aboutUsCacheEvict();
 
-    @CacheEvict(cacheNames = "faqCache", allEntries = true)
     void faqCacheEvict();
 }

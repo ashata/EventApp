@@ -16,11 +16,11 @@ function BaseController($scope, $http) {
 	$scope.getPage = function () {
         if(window.location.hash.substring(2) == 'faq'){
             $scope.title = 'FAQ';
-            return $scope.getFAQ();
+            return $scope.getFAQ('faq');
         }
         else if(window.location.hash.substring(2) == 'aboutUs'){
             $scope.title = 'About Us';
-            return $scope.getFAQ();
+            return $scope.getFAQ('aboutUs');
         }
         else{
             $scope.title = 'Program for the day of';
@@ -28,16 +28,17 @@ function BaseController($scope, $http) {
         }
 	}
 
-    $scope.getFAQ = function () {
+    $scope.getFAQ = function (value) {
 		$http({
 			method: 'GET',
 			url: '/getPage/',
 			params: {
-				path: $scope.title
+				path: value
 			}
 		}).then(function (success) {
 			//fetch from server and display results
 			$scope.pageItems = success.data;
+			$scope.weather = false;
 		}, function (error) {
 			$location.path("/")
 		});
@@ -51,6 +52,7 @@ function BaseController($scope, $http) {
     		}).then(function (success) {
     			//fetch from server and display results
     			$scope.pageItems = success.data;
+    			$scope.weather = true;
     		}, function (error) {
     			$location.path("/")
     		});

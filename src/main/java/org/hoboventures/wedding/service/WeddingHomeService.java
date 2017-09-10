@@ -15,6 +15,5 @@ public interface WeddingHomeService {
 
     List<Program> getProgram();
 
-    @CacheEvict(cacheNames = "programCache", allEntries = true)
     void programCacheEvict();
 }
