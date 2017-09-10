@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * Created by Asha on 4/21/2017.
@@ -53,5 +54,20 @@ public class RSVP extends BaseDTO {
                 break;
             }
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        RSVP rsvp = (RSVP) o;
+        return (Objects.equals(firstName, rsvp.firstName) && Objects.equals(lastName, rsvp.lastName)) ||
+                Objects.equals(email, rsvp.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), firstName, lastName, email);
     }
 }
