@@ -1,16 +1,5 @@
 angular.module('weddingApp')
 .controller('rsvpController', RSVPController);
-// .directive('rsvp', RSVPDirective);
-
-// function RSVPDirective() {
-	// return {
-		// controller: 'rsvpController',
-		// scope: {
-			// item: '=',
-		// },
-		// templateUrl: 'scripts/rsvp/rsvp.html'
-	// };
-// }
 
 function RSVPController($scope, $http) {
 	this.$onInit = function () {

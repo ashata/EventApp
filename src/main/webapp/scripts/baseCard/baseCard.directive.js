@@ -23,7 +23,7 @@ function BaseController($scope, $http) {
             return $scope.getFAQ('aboutUs');
         }
         else{
-            $scope.title = 'Program for the day of';
+            $scope.title = 'Program for the day of (Time and details subject to change, please check back close to wedding)';
             return $scope.getProgram();
         }
 	}

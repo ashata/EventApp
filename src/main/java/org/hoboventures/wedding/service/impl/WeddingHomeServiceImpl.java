@@ -34,7 +34,6 @@ public class WeddingHomeServiceImpl implements WeddingHomeService {
     @Cacheable(value = "programCache", unless = "#result != null")
     public List<Program> getProgram(){
         List<Program> list = programRepository.findAll();
-        logger.info("Program: " + list.toString());
         return list;
     }
 
