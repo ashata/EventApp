@@ -32,7 +32,7 @@
 	 * Methods for dealing with the model
 	 *
 	 ****************************************************************************/
-	var appModule = angular.module('weddingApp', ['ngRoute', 'schemaForm', 'angular-carousel', 'ngTouch']);
+	var appModule = angular.module('weddingApp', ['ngRoute', 'schemaForm', 'angular-carousel', 'ngTouch', 'ngTable']);
 
 	appModule.config(['$locationProvider', function ($locationProvider) {
 				$locationProvider.hashPrefix('');
@@ -68,6 +68,10 @@
 		.when('/program', {
             controller: 'baseController',
             templateUrl: 'scripts/baseCard/baseCard.html'
+        })
+        .when('/report', {
+            controller: 'reportController',
+            templateUrl: 'scripts/report/rsvpReport.html'
         })
 		.otherwise({
 			controller: 'mainCtrl',

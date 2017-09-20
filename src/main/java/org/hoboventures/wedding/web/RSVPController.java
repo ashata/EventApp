@@ -1,6 +1,7 @@
 package org.hoboventures.wedding.web;
 
 import org.hoboventures.wedding.dto.RSVP;
+import org.hoboventures.wedding.dto.RSVPReport;
 import org.hoboventures.wedding.dto.WeddingHome;
 import org.hoboventures.wedding.util.JsonUtil;
 import org.hoboventures.wedding.service.RSVPService;
@@ -37,5 +38,10 @@ public class RSVPController {
         ModelAndView mav = new ModelAndView();
         mav.setViewName("scripts/rsvp/rsvp");
         return mav;
+    }
+
+    @GetMapping(value = "admin/rsvpReport")
+    public RSVPReport rsvpReport(){
+        return rsvpService.printReport();
     }
 }

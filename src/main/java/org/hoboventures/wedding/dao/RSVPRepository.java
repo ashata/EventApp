@@ -1,9 +1,12 @@
 package org.hoboventures.wedding.dao;
 
 import org.hoboventures.wedding.dto.RSVP;
+import org.hoboventures.wedding.dto.RSVPLite;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
+
+import java.util.function.Function;
 
 /**
  * Created by Asha on 4/22/2017.

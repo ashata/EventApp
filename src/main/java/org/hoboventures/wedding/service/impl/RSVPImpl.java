@@ -1,15 +1,18 @@
 package org.hoboventures.wedding.service.impl;
 
 import org.apache.commons.lang3.ObjectUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.hoboventures.wedding.dao.RSVPRepository;
 import org.hoboventures.wedding.dto.RSVP;
+import org.hoboventures.wedding.dto.RSVPLite;
+import org.hoboventures.wedding.dto.RSVPReport;
 import org.hoboventures.wedding.service.RSVPService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Asha on 4/22/2017.
@@ -34,6 +37,7 @@ public class RSVPImpl implements RSVPService {
                 }
                 rsvp.initActivitiesOfInterest();
                 rsvp.initRSVPCode();
+                rsvp.resetCount();
                 rsvp = rsvpRepository.save(rsvp);
                 returnVal = 0L;
             } catch (Exception ex) {
@@ -60,5 +64,18 @@ public class RSVPImpl implements RSVPService {
             returnVal = -1L;
         }
         return returnVal;
+    }
+
+    public List<RSVP> findAll(){
+        List<RSVP> list = rsvpRepository.findAll();
+        if(list == null){
+            list = new ArrayList<>();
+        }
+        return list;
+    }
+
+    @Override
+    public RSVPReport printReport(){
+        return new RSVPReport(findAll());
     }
 }

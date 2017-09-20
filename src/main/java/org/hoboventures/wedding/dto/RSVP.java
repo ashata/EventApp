@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.function.Function;
 
 /**
  * Created by Asha on 4/21/2017.
@@ -47,6 +48,13 @@ public class RSVP extends BaseDTO {
         }
     }
 
+    public String getRsvpText() {
+        if(StringUtils.isBlank(rsvpText)){
+            setRsvpText(getRsvpCode().getText());
+        }
+        return rsvpText;
+    }
+
     public void initRSVPCode(){
         for (RSVPCodeEnum rsvp : RSVPCodeEnum.values()) {
             if (StringUtils.equalsIgnoreCase(rsvp.getText(), rsvpText)) {
@@ -56,14 +64,26 @@ public class RSVP extends BaseDTO {
         }
     }
 
+    public void resetCount(){
+        switch (RSVPCodeEnum.valueOf(this.getRsvpCode().name())){
+            case THANKS_BUT_DECLINE:
+            case NEED_MORE_TIME:
+            case WATCH_ONLINE:
+                setGuests(1L);
+                break;
+            default:
+                break;
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         RSVP rsvp = (RSVP) o;
         return (StringUtils.equalsIgnoreCase(getFirstName(), rsvp.getFirstName()) &&
-                    StringUtils.equalsIgnoreCase(getLastName(), rsvp.getLastName())) ||
-                        StringUtils.equalsIgnoreCase(getEmail(), rsvp.getEmail());
+                StringUtils.equalsIgnoreCase(getLastName(), rsvp.getLastName())) ||
+                StringUtils.equalsIgnoreCase(getEmail(), rsvp.getEmail());
     }
 
     @Override
@@ -76,7 +96,7 @@ public class RSVP extends BaseDTO {
     }
 
     public String getLastName() {
-        return StringUtils.trimToEmpty(lastName);
+        return StringUtils.trimToEmpty(StringUtils.capitalize(lastName));
     }
 
     public String getEmail() {

@@ -64,7 +64,7 @@ body {
   overflow-x: auto;
  }
 
-.header {
+.appHeader {
   background: url(../images/fall-banner.jpg) center center repeat-x !important;
   text-align: center;
   width: 100%;

@@ -80,19 +80,19 @@ function RSVPController($scope, $http) {
 	}
 
 	$scope.rsvp = function (form) {
-	        $scope.$broadcast('schemaFormValidate');
-			//rsvp save/update.
-			if (form.$valid) {
-                $http({
-                    method: 'POST',
-                    url: '/rsvp',
-                    data: $scope.rsvpDTO
-                }).then(function (success) {
-                    //TODO: update this to fetch from server and display results
-                    alert("Thanks for your RSVP.")
-                }, function (error) {
-                    alert("Error saving, please try again later or contact us at email");
-                });
-			}
+        $scope.$broadcast('schemaFormValidate');
+        //rsvp save/update.
+        if (form.$valid) {
+            $http({
+                method: 'POST',
+                url: '/rsvp',
+                data: $scope.rsvpDTO
+            }).then(function (success) {
+                //TODO: update this to fetch from server and display results
+                alert("Thanks for your RSVP.")
+            }, function (error) {
+                alert("Error saving, please try again later or contact us at email");
+            });
+        }
 	}
 }

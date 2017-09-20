@@ -1,0 +1,24 @@
+<div class="pageTitle low" ng-bind="title">RSVP responses</div>
+<div class="infoCards" ng-init="report()">
+    <div>
+        <table class="infoCard" ng-table="ngTableData" show-filter="true">
+            <tr ng-repeat="rsvp in data.rsvpList">
+                <td title="'Last Name'" filter="{ lastName: 'text'}" sortable="'lName'">
+                    {{rsvp.lastName}}</td>
+                <td title="'First Name'" filter="{ firstName: 'text'}" sortable="'fName'">
+                    {{rsvp.firstName}}</td>
+                <td title="'RSVP'" filter="{ rsvpText: 'text'}" sortable="'rsvpTxt'">
+                    {{rsvp.rsvpText}}</td>
+                <td title="'Guests'" filter="{ guests: 'number'}" sortable="'guests'">
+                    {{rsvp.guests}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="infoCard">
+        <span>Total guests: {{data.rsvpTotalCount}}</span>
+        <span>Accepted total: {{data.rsvpAcceptCount}}</span>
+        <span>Request for video share total: {{data.rsvpWatchOnlineCount}}</span>
+        <span>Guests who need more time : {{data.rsvpNeedTimeCount}}</span>
+        <span>Total guests who declined: {{data.rsvpDeclineCount}}</span>
+    </div>
+</div>
