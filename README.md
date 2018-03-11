@@ -15,9 +15,9 @@ It reads data/content from mongo to display dynamic data and has pages/abilities
     Wedding program
   
   
-This can be extended to have guest list and any other pages by reusing ui templates 
+This can be extended to have guest list and any other pages by adding/reusing ui templates 
 
-and adding/reusing a simple spring boot JPA as needed. 
+and a simple spring boot JPA as needed. 
 
 As the groom, Charlie Mehrer worked on cleaning up css and enhancing UI
 
