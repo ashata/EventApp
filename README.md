@@ -21,7 +21,10 @@ and adding/reusing a simple spring boot JPA as needed.
 
 As the groom, Charlie Mehrer worked on cleaning up css and enhancing UI
 
+RSVP form is implemented with angular schema form library: http://schemaform.io/
+
 I used Google PWA https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/ and integrated that concept into a Spring boot app and wrote the UI in angular instead of the javascript used in the codelab
+
 
 Why PWA: One of the cool features is, it asks user for permission to save a widget/bookmark on the phone. 
 
