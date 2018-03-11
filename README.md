@@ -13,3 +13,17 @@ This can be extended to have guest list and any other pages by reusing ui templa
 and adding simple spring boot JPA or using an existing DAO as needed.
 
 As the groom, Charlie Mehrer worked on cleaning up css and enhancing UI
+
+I used Google PWA https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/ and integrated that concept into a Spring boot app and wrote the UI in angular instead of the javascript used in the codelab
+
+Why PWA: One of the cool features is, it asks user for permission to save a widget/bookmark on the phone. 
+
+When saved, it looks and works just like a native app on the phone but is really just 1 responsive website. 
+
+It helps you consolidate your web and mobile app developers to avoid cost and maintenance. 
+
+Create a simple, single, seamless web/responsive application that runs on all devices
+
+and supports cool features like offline data, push notifications and look/feel of a native app.
+
+One of my favorite PWA to try on your phone: https://paperplanes.world/
