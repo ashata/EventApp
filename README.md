@@ -2,7 +2,8 @@
 I wrote this Progressive web app for our wedding and deployed on cloud platform Digital Ocean at that time. 
 
 It reads data/content from mongo to display dynamic data and has pages/abilities like 
-  Home
+    
+    Home
   
     Directions
 
