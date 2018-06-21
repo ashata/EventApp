@@ -14,11 +14,9 @@ It reads data/content from mongo to display dynamic data and has pages/abilities
     spring boot security enabled RSVP report/guest viewer for admin to login and filter/browse at real time.
 
     Wedding program
-  
-  
-This can be extended to have guest list and any other pages by adding/reusing ui templates 
-
-and a simple spring boot JPA as needed. 
+    
+    This can be extended to have guest list and any other pages by adding/reusing ui templates 
+    and a simple spring boot JPA as needed. 
 
 As the groom, Charlie Mehrer worked on cleaning up css and enhancing UI
 
