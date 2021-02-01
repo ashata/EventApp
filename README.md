@@ -18,8 +18,6 @@ It reads data/content from mongo to display dynamic data and has pages/abilities
     This can be extended to have guest list and any other pages by adding/reusing ui templates 
     and a simple spring boot JPA as needed. 
 
-As the groom, Charlie Mehrer worked on cleaning up css and enhancing UI
-
 RSVP form is implemented with angular schema form library: http://schemaform.io/
 
 I used Google PWA https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/ and integrated that concept into a Spring boot app and wrote the UI in angular instead of the javascript used in the codelab
